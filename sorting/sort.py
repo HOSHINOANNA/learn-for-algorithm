@@ -1,3 +1,4 @@
+# 平均时间复杂度：O(nlogn)， 最好时间复杂度：O(nlogn) 最坏时间复杂度：O(n^2) 空间复杂度：O(logn)
 def quickSort(arr):
     #递归
     length = len(arr)
