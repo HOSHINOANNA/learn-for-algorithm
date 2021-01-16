@@ -26,6 +26,7 @@ def selectionSort(arr):
         arr[min_index], arr[i] = arr[i], arr[min_index]
     return arr
 
+
 # 将第一待排序序列第一个元素看做一个有序序列,把第二个元素到最后一个元素当成是未排序序列。
 
 # 从头到尾依次扫描未排序序列将扫描到的每个元素插入有序序列的适当位置。（
@@ -34,11 +35,12 @@ def selectionSort(arr):
 # 类似于插扑克牌。
 def interSectionSort(arr):
     n = len(arr)
-    for i in range(1,n):
-        for j in range(i,0,-1):
-            if arr[j]<arr[j-1]:
-                arr[j-1],arr[j] = arr[j],arr[j-1]
-            else : break # 因为前面的数组都是有序数组 所以可以直接停止。
+    for i in range(1, n):
+        for j in range(i, 0, -1):
+            if arr[j] < arr[j - 1]:
+                arr[j - 1], arr[j] = arr[j], arr[j - 1]
+            else:
+                break  # 因为前面的数组都是有序数组 所以可以直接停止。
     return arr
 
 
