@@ -31,13 +31,17 @@ def selectionSort(arr):
 # 从头到尾依次扫描未排序序列将扫描到的每个元素插入有序序列的适当位置。（
 # 如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）
 # 平均时间复杂度：O(n^2)， 最好时间复杂度：O(n) 最坏时间复杂度：O(n^2) 空间复杂度：O(1)
-def intersectionSort(arr):
+# 类似于插扑克牌。
+def interSectionSort(arr):
     n = len(arr)
-    for j in range(1, len(arr)):  # 从list第二个元素开始
-        key = arr[j]  # 储存将要进行插入排序的元素数值
-        index = j  # 储存将要进行插入排序的元素的索引
-        while index > 0 and arr[index - 1] > key:  # 执行插入排序的判断条件
-            arr[index] = arr[index - 1]  # 将之前排好序的元素向后移
-            index -= 1
-        arr[index] = key  # 以上将元素向后移后，将新加元素插入它的正确的位置上
+    for i in range(1,n):
+        for j in range(i,0,-1):
+            if arr[j]<arr[j-1]:
+                arr[j-1],arr[j] = arr[j],arr[j-1]
+            else : break # 因为前面的数组都是有序数组 所以可以直接停止。
+    return arr
 
+
+arr = [3, 2, 0, 7, 4]
+result = interSectionSort(arr)
+print(result)
